@@ -1,6 +1,7 @@
 import React from 'react'
 import InfoIcon from '@mui/icons-material/Info';
 import CircleIcon from '@mui/icons-material/Circle';
+import NewsOption from './NewsOption';
 const RightSideBar = () => {
   return (  <div className='right__sidebar'>
           <div className='linkedin__newsContainer'>
@@ -9,40 +10,11 @@ const RightSideBar = () => {
           <InfoIcon/>
          </div>
           <div>
-               <div className='linkedin__newsOptions' >
-                  <div style={{display:'flex',alignItems:'center'}}>
-                      <CircleIcon/><b>Apple</b>
-                  </div>
-                  <small>Top News  •  156 readers</small>
-              </div>
-              <div className='linkedin__newsOptions' >
-                  <div style={{display:'flex',alignItems:'center'}}>
-                      <CircleIcon/><b>React.js</b>
-                  </div>
-                  <small>8h ago</small>
-
-              </div>
-                <div className='linkedin__newsOptions' >
-                  <div style={{display:'flex',alignItems:'center'}}>
-                      <CircleIcon/><b>Microsoft</b>
-                  </div>
-                  <small>1d ago</small>
-
-              </div>
-               <div className='linkedin__newsOptions' >
-                  <div style={{display:'flex',alignItems:'center'}}>
-                       <CircleIcon/><b>Amazon</b>
-                  </div>
-                  <small>3d ago</small>
-
-              </div>
-               <div className='linkedin__newsOptions'>
-                  <div style={{display:'flex',alignItems:'center'}}>
-                       <CircleIcon/><b>Meta</b>
-                  </div>
-                   <small>1w ago</small>
-
-              </div>
+              <NewsOption title={'Apple'} subtitle={'Top News  •  156 readers'} />
+             <NewsOption title={'React.js'} subtitle={'8h ago'} />
+             <NewsOption title={'Microsoft'} subtitle={'1d ago'} />
+             <NewsOption title={'Amazon'} subtitle={'3d ago'} />
+             <NewsOption title={'Meta'} subtitle={'1w ago'} />
               <hr></hr>
               <p className='discover'>Discover more</p>
           </div>

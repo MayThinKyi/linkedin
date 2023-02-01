@@ -1,44 +1,22 @@
 import React from 'react'
 import bg from '../images/sideBar__bg.png'
+import logo from '../images/logo.png'
+import Profile from './Profile'
+import RecentOption from './RecentOption'
+import { useSelector } from 'react-redux'
+import { auth } from '../firebase'
 const LeftSideBar = () => {
-    return (<div className='left__sideBar'>
-        <div className='profile__container'>
-            <img src={bg} alt='background' />
-            <div className='profile__bottom'>
-                <p className='username'>Testing</p>
-                <p className='user__gmail'>user@gmail.com</p>
-                <div className='account__info'>
-                    <p className='title'>Who viewed you</p>
-                    <p className='number'>2,543</p>
-                </div>
-                <div className='account__info'>
-                    <p className='title'>Views on Post</p>
-                    <p className='number'>2,448</p>
-                </div>
+      const user=useSelector((state)=>state.user.value)
 
-            </div>
-      </div>
+    return (<div className='left__sideBar'>
+       <Profile bg={bg} img={user?.image} username={auth?.currentUser.displayName} usergmail={user?.email} />
       <div className='recent__container'>
           <p className='recent'>Recent</p>
           <div>
-              <div className='recent__options' style={{display:'flex',alignItems:'center'}}>
-                  <b className='hash'>#</b><b>react.js</b>
-              </div>
-              <div className='recent__options' style={{display:'flex',alignItems:'center'}}>
-                  <b className='hash'>#</b><b>programming</b>
-              </div>
-               <div className='recent__options' style={{display:'flex',alignItems:'center'}}>
-                  <b className='hash'>#</b><b>computer science</b>
-              </div>
-               <div className='recent__options' style={{display:'flex',alignItems:'center'}}>
-                  <b className='hash'>#</b><b>javascript</b>
-              </div>
-               <div className='recent__options' style={{display:'flex',alignItems:'center'}}>
-                  <b className='hash'>#</b><b>software engineer</b>
-              </div>
-               <div className='recent__options' style={{display:'flex',alignItems:'center'}}>
-                  <b className='hash'>#</b><b>coding</b>
-              </div>
+             <RecentOption title={'react.js'} />
+            <RecentOption title={'programming'} />
+             <RecentOption title={'computer science'} />
+             <RecentOption title={'software engineer'} />              
               <hr></hr>
               <p className='discover'>Discover more</p>
           </div>

@@ -5,6 +5,9 @@ body{
   overflow-x: hidden;
   font-family: 'Source Sans Pro', sans-serif;
 }
+img{
+  object-fit: cover;
+}
 /* Header */
 .header{
   background-color: #fff;
@@ -85,16 +88,25 @@ body{
   top: 100px;
   left:100px;
   width: 20%;
+ 
 }
 .profile__container {
-  
+  position: relative;
   background-color: #fff;
   border: 1px solid rgb(225, 219, 219);
   border-radius: 15px;
   cursor: pointer;
   margin-bottom: 10px;
 }
-.profile__container img{
+.profile__pic{
+  position: absolute;
+  top:50px;
+  left: 90px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+.profile__container .bg{
   height:90px;
   width: 100%;
    border-top-left-radius: 15px;
@@ -106,7 +118,8 @@ body{
 .username{
   font-weight: 600;
   font-size: 20px;
-  margin: 0;
+  margin:20px auto 0;
+  text-align: center;
 }
 .user__gmail{
   font-weight: 700;
@@ -234,7 +247,7 @@ justify-content: space-between;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  
+  margin-bottom: 20px;
 }
 .input{
   display: flex;
@@ -289,21 +302,212 @@ border: none;
   border-radius: 10px;
   padding:0px 10px;
 }
+.post__container{
+  border: 1px solid rgb(246, 240, 240);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.post__header{
+  display: flex;
+  align-items: center;
+  gap:6px;
+}
+.post__header img{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.post__header .user__info {
+  display: flex;
+ flex-direction: column;
+}
+.post__header .user__info p{
+  margin: 0;
+}
+.post__header .user__info p:first-child{
+  font-weight: 700;
+}
+.post__header .user__info p:nth-child(2){
+  font-size: 14px;
+  color:rgb(101, 100, 98)
+}
 
+.post__content{
+  padding: 0 10px;
+  margin: 5px 0;
+}
+.post__content p{
+  margin: 6px 0;
+  font-size: 17px;
+  color: rgb(73, 72, 72);
+}
+.post__optionsContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post__option{
+display: flex;
+  align-items: center;
+  padding: 0;
+
+}
+.post__option .icon__button {
+  border-radius: 10px;
+  padding: 15px;
+}
+.post__option .MuiSvgIcon-root{
+  font-size: 20px;
+  margin-right: 6px;
+}
+.post__option span{
+  font-size: 17px;
+  font-weight: 700;
+}
+.login{
+  margin: 100px auto 0;
+  text-align: center;
+}
+.login img{
+  height: 100px;
+  margin-bottom: 20px;
+}
+.login .input{
+    width: 300px;
+  display: block;
+    margin: auto;
+    border: 0;
+}
+.login input{
+  width: 300px;
+    margin: auto;
+  width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px 10px;
+    font-size: 19px;
+    font-weight: 500;
+    color: #000;
+}
+.login button{
+  background: #0074B1;
+  text-align: center;
+  border: 2px solid black;
+  color: #fff;
+  font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    width: 325px;
+    padding: 15px ;
+    margin-left: 18px;
+    margin-top: 10px;
+}
+.login form p{
+  margin: 0;
+  color: red;
+}
 @media screen and (max-width:1030px) {
   .header{
     padding:10px 100px;
   }
+    .main {
+      display: flex;
+      padding: 25px 50px;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  .feed__container{
+    width: 48%;
+  }
+  .right__sidebar{
+    right:10px;
+  }
+  .linkedin__newsContainer{
+    width: 200px;
+  }
+    .post__option .icon__button {
+      border-radius: 10px;
+      padding: 10px;
+    }
+  .post__option .MuiSvgIcon-root {
+          font-size: 16px;
+          margin-right: 4px;
+        }
+        .post__option span {
+          font-size: 16px;
+        }
+    .profile__pic{
+      left:60px;
+    }
+}
+
+
+@media screen and (max-width:980px){
+  .main {
+      padding: 25px 40px;
+      gap: 0px;
+    }
+.feed__container {
+    width: 45%;
+    left:320px;
+   
+  }
+    .input__options .icon__button {
+      border-radius: 10px;
+      padding: 0px 5px;
+    }
+    .input__options p {
+      font-size: 15px;
+      margin-left: 2px;
+    }
+    .right__sidebar{
+      right: 20px;
+    }
 }
 @media screen and (max-width:950px) {
   .header {
     padding: 10px 70px;
   }
+    .main {
+      padding: 25px 20px;
+    }
+  
+    .left__sideBar {
+      top:90px;
+      left: 40px;
+    }
+  
+    .feed__container {
+      left: 220px;
+      margin: 70px auto 0;
+    }
+  
+    .right__sidebar {
+            top: 90px;
+      right: 40px;
+    }
 }
+
 @media screen and (max-width:880px) {
   .header {
     padding: 10px 40px;
   }
+}
+@media screen and (max-width:860px){
+  .left__sideBar{
+    display: none;
+  }
+  .right__sidebar{
+    display: none;
+  }
+    .feed__container {
+      width: 60%;
+      left: 180px;
+    }
 }
 @media screen and (max-width:815px) {
   .header {
@@ -320,6 +524,24 @@ border: none;
   .header {
     padding: 10px 8px;
   }
+}
+@media screen and (max-width:700px){
+.feed__container {
+    width: 80%;
+    left: 80px;
+  }
+    .input__options .icon__button {
+      border-radius: 10px;
+      padding: 5px 12px;
+    }
+  .post__option .icon__button {
+          border-radius: 10px;
+          padding: 15px;
+        }
+    .post__option .MuiSvgIcon-root {
+      font-size: 20px;
+      margin-right: 6px;
+    }
 }
 @media screen and (max-width:660px) {
   .header__left img {
@@ -348,9 +570,22 @@ border: none;
       width: 30px;
       height: 30px;
     }
+        .feed__container {
+          width: 90%;
+          left: 30px;
+        }
 
 }
-@media screen and (max-width:570px) {
+@media screen and (max-width:580px){
+          .feed__container {
+              margin: 90px auto 0;
+              
+            }
+}
+@media screen and (max-width:571px) {
+  .login{
+    margin-top: 120px;
+  }
   .header{
     flex-wrap: wrap;
     padding:10px 20px;
@@ -373,14 +608,116 @@ border: none;
  .header__optionContainer p {
      font-size: 12px;
    }
+        .feed__container {
+          margin: 120px auto 0;
+    
+        }
+}
+@media screen and (max-width:535px){
+  .feed__container {
+      width: 90%;
+      left: 0;
+    }
+         .input__options .icon__button {
+           border-radius: 10px;
+           padding: 5px 8px;
+         }
+    
+         .post__option .icon__button {
+           border-radius: 10px;
+           padding: 12px 15px;
+         }
+    
+         .post__option .MuiSvgIcon-root {
+           font-size: 18px;
+           margin-right: 6px;
+         }
+}
+@media screen and (max-width:500px){
+.post__container{
+  padding: 10px 5px;
+}
+.post__option span {
+  font-size: 14px;
+}
+}
+@media screen and (max-width:478px){
+.post__option .icon__button {
+    border-radius: 10px;
+    padding: 12px 8px;
+  }
+  .input__options .MuiSvgIcon-root{
+    font-size: 18px;
+  }
+    .input__options p {
+      margin: 3px  0 3px 1px;
+      font-size: 14px;
+    }
+        .input__options .icon__button {
+          padding: 12px 8px;
+        }
+}
+@media screen and (max-width:435px){
+  .feed__container{
+    width: 100%;
+  }
 }
 @media screen and (max-width:400px) {
   .header__optionContainer {
       margin-right: 15px;
     }
     .header__optionContainer .MuiSvgIcon-root {
-      font-size: 23px;
+      font-size: 21px;
     }
+        .post__option .icon__button {
+          border-radius: 9px;
+          padding: 8px 6px;
+        }
+    
+        .input__options .MuiSvgIcon-root {
+          font-size: 18px;
+        }
+    
+        .input__options p {
+          margin: 3px 0 3px 1px;
+          font-size: 14px;
+        }
+    
+        .input__options .icon__button {
+          padding: 8px 5px;
+        }
+}
+@media screen and (max-width:376px){
+  .login .input {
+      width: 250px;
+    }
+        .login button{
+          width: 278px;
+        }
+.post__option .icon__button {
+    border-radius: 9px;
+    padding: 8px 6px;
+  }
+
+  .input__options .MuiSvgIcon-root {
+    font-size: 16px;
+  }
+
+  .input__options p {
+    margin: 3px 0 3px 1px;
+    font-size: 12px;
+  }
+
+  .input__options .icon__button {
+    padding: 8px 5px;
+  }
+    .post__option .MuiSvgIcon-root {
+      font-size: 16px;
+      margin-right: 2px;
+    }
+        .post__option span {
+          font-size: 14px;
+        }
 }
 @media screen and (max-width:360px) {
   .header__optionContainer {
@@ -393,4 +730,22 @@ border: none;
     .header__optionContainer p {
       font-size: 11px;
     }
+}
+@media screen and (max-width:350px){
+  .post__option .MuiSvgIcon-root {
+      font-size: 14px;
+      margin-right: 2px;
+    }
+  
+    .post__option span {
+      font-size: 13px;
+    }
+}
+@media screen and (max-width:330px) {
+  .login .input {
+      width: 220px;
+    }
+         .login button {
+           width: 246px;
+         }
 }
